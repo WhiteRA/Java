@@ -1,4 +1,4 @@
-package jAVA.Java;
+package jAVA;
 
 public class t_2 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package jAVA.Java;
+package jAVA;
 
 public class lib {
 }
