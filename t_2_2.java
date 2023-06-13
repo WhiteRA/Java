@@ -12,13 +12,31 @@ public class t_2_2 {
 
         System.out.print("Начало: ");
         int beginning = in.nextInt();
-        System.out.print("Конец: ");
-        int end = in.nextInt();
+        System.out.println("Убывающая - down/ Возрастающая - up: ");
+        String status = in.next();
         
-        for (int i = 0; i < myArray.length; i++) {
+        switch (status) {
+            case "down":
+                for (int i = 0; i < myArray.length; i++) {
+                    myArray[i] = beginning;
+                    beginning--;
+                }
+                break;
+            case "up":
+                for (int i = 0; i < myArray.length; i++) {
                     myArray[i] = beginning;
                     beginning++;
+                }
+                break;
+            default:
+                break;
         }
-        System.out.println(Arrays.toString(myArray));
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] > beginning) {
+                
+            }else{
+                System.out.println("Убывающая");
+            }
+        }
     }
 }
