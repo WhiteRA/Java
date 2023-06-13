@@ -1,7 +1,6 @@
 package jAVA;
 
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class t_2_2 {
     public static void main(String[] args) {
@@ -38,5 +37,6 @@ public class t_2_2 {
                 System.out.println("Убывающая");
             }
         }
+        in.close();
     }
 }
