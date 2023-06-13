@@ -14,14 +14,10 @@ public class t_2_2 {
         int beginning = in.nextInt();
         System.out.print("Конец: ");
         int end = in.nextInt();
-        if (end > myArray.length) {
-            System.out.println("Последовательность слишком большая");
-            }else{
-                for (int i = 0; i < myArray.length; i++) {
+        
+        for (int i = 0; i < myArray.length; i++) {
                     myArray[i] = beginning;
                     beginning++;
-                    //System.out.println(myArray[i]);
-            }
         }
         System.out.println(Arrays.toString(myArray));
     }
