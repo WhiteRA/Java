@@ -2,13 +2,14 @@ package jAVA;
 
 import java.util.Scanner;
 
-public class t_3{
+public class t_2_1{
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
         System.out.print("До какого числа ? ");
         int num = in.nextInt();
         int i, j;
+        int k = 0;
         boolean check;  
         for (i = 2; i < num; i++) {
             check = true;
@@ -19,9 +20,9 @@ public class t_3{
                 }
             }
             if (check) {
-                System.out.println(i);
-
+                k+=i;
             }
         }
+        System.out.println(k);
     }
 }

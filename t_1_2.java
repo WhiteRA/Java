@@ -1,6 +1,6 @@
 package jAVA;
 
-public class t_2 {
+public class t_1_2 {
     public static void main(String[] args) {
         int count = 0;
         int[] mass = new int[] { 1, 2, 1, 2, -1, 1, 3, 1, 3, -1, 0 };

@@ -1,6 +1,6 @@
 package jAVA;
 
-public class t_1 {
+public class t_1_1 {
     public static void main(String[] args) {
         class Solution {
             public String reverseWords(String s) {
