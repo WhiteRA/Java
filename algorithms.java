@@ -1,7 +1,7 @@
 import java.util.Arrays;
  
-public class algorithms
-{
+public class algorithms{
+ 
     // вернуть левого потомка `A[i]`
     private static int LEFT(int i) {
         return (2*i + 1);
