@@ -1,7 +1,5 @@
 package jAVA.live;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 public class main {
     public static void main(String[] args) {
@@ -12,6 +10,9 @@ public class main {
         // lib.fillingUp3(arr2);
         // lib.upper(mass);
         // lib.minMax(mass);
+
+
+        
     }
 
     

@@ -1,6 +1,7 @@
 package jAVA.live;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class lib {
     public static void miror(int[] a) {
@@ -47,7 +48,33 @@ public class lib {
         System.out.println("max " + max);
     }
 
-    public static void calcul(){
+    public static void calc(){
+        Scanner in = new Scanner(System.in);
+        System.out.print("Первое число ");
+        int first = in.nextInt();
+        System.out.print("Второе число ");
+        int second = in.nextInt();
+        System.out.print("Какая операция ");
+        System.out.print("+ , - , / , * ");
+        String operation = in.nextLine();
+
+
+        switch (operation) {
+            case "+":
+                System.out.println(first + second);
+                break;
+            case "-":
+                System.out.println(first - second);
+                break;
+            case "/":
+                System.out.println(first / second);
+                break;
+            case "*":
+                System.out.println(first * second);
+                break;
         
+            default:
+                break;
+        }
     }
 }
