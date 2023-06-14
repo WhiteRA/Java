@@ -56,21 +56,25 @@ public class lib {
         int second = in.nextInt();
         System.out.print("Какая операция ");
         System.out.print("+ , - , / , * ");
-        String operation = in.nextLine();
+        String operation = in.next();
 
 
         switch (operation) {
             case "+":
-                System.out.println(first + second);
+                first += second;
+                System.out.println(first);
                 break;
             case "-":
-                System.out.println(first - second);
+                first -= second;
+                System.out.println(first);
                 break;
             case "/":
-                System.out.println(first / second);
+                first /= second;
+                System.out.println(first);
                 break;
             case "*":
-                System.out.println(first * second);
+                first *= second;
+                System.out.println(first);
                 break;
         
             default:

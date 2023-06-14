@@ -11,8 +11,8 @@ public class main {
         // lib.upper(mass);
         // lib.minMax(mass);
 
+        lib.calc();
 
-        
     }
 
     
