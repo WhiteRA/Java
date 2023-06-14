@@ -1,6 +1,6 @@
 import java.util.Arrays;
  
-class Main
+public class algorithms
 {
     // вернуть левого потомка `A[i]`
     private static int LEFT(int i) {
