@@ -107,7 +107,16 @@ public class lib {
         return namber;
     }
 
-    public static void game1() {
+    public static void pole(int size) {
+        int[][] pole = new int[5 + 1][5 + 1]; // первая строка и столбец будут отданы под координаты
+        for (int i = 0; i < pole.length; i++) {
+            for (int j = 0; j < pole.length; j++) {
+                pole[i][0] = i;
+                pole[0][j] = j;
+                System.out.print(pole[i][j] + " ");
+            }
+            System.out.println();
+        }
 
     }
 

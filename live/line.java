@@ -10,8 +10,7 @@ public class line {
         // lib.upper(mass);
         // lib.minMax(mass);
 
-        System.out.println(lib.ranmodNumber(3, 5));
+        lib.pole(5);
 
     }
-
 }
