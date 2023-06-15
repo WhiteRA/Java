@@ -82,12 +82,29 @@ public class lib {
         in.close();
     }
 
-    public static int input() {
+    /**
+     * Просит указать число
+     * 
+     * @return Возвращает полученное число
+     */
+    public static int inputNumberOfUser() {
         System.out.println("Ввод числа ");
         Scanner in = new Scanner(System.in);
         int a = in.nextInt();
         in.close();
         return a;
+    }
+
+    /**
+     * Генерирует случайное число в заданых приделах
+     * 
+     * @param a принимает минимальное число
+     * @param b принимает максимальное число
+     * @return Возвращает случайное число число
+     */
+    public static int ranmodNumber(int a, int b) {
+        int namber = (int) (Math.random() * b) + a;
+        return namber;
     }
 
     public static void game1() {
