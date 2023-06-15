@@ -33,7 +33,7 @@ public class lib {
         System.out.println(Arrays.toString(a));
     }
 
-    public static void minMax(int[] a){
+    public static void minMax(int[] a) {
         int max = 0;
         int min = 0;
         for (int i = 0; i < a.length; i++) {
@@ -48,7 +48,7 @@ public class lib {
         System.out.println("max " + max);
     }
 
-    public static void calc(){
+    public static void calc() {
         Scanner in = new Scanner(System.in);
         System.out.print("Первое число ");
         int first = in.nextInt();
@@ -57,7 +57,6 @@ public class lib {
         System.out.print("Какая операция ");
         System.out.print("+ , - , / , * ");
         String operation = in.next();
-
 
         switch (operation) {
             case "+":
@@ -76,9 +75,23 @@ public class lib {
                 first *= second;
                 System.out.println(first);
                 break;
-        
+
             default:
                 break;
         }
+        in.close();
     }
+
+    public static int input() {
+        System.out.println("Ввод числа ");
+        Scanner in = new Scanner(System.in);
+        int a = in.nextInt();
+        in.close();
+        return a;
+    }
+
+    public static void game1() {
+
+    }
+
 }

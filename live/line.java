@@ -1,7 +1,6 @@
 package jAVA.live;
 
-
-public class main {
+public class line {
     public static void main(String[] args) {
         int[] arr = { 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 };
         int[] arr2 = new int[8];
@@ -14,7 +13,5 @@ public class main {
         lib.calc();
 
     }
-
-    
 
 }
