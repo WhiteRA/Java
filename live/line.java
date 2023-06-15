@@ -10,7 +10,7 @@ public class line {
         // lib.upper(mass);
         // lib.minMax(mass);
 
-        lib.pole(5);
+        lib.pole(3);
 
     }
 }

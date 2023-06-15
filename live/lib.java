@@ -107,8 +107,13 @@ public class lib {
         return namber;
     }
 
+    /**
+     * Метод пострания поля (2х мерной матрицы)
+     * 
+     * @param size Определяет размер поля без учёта гранниц
+     */
     public static void pole(int size) {
-        int[][] pole = new int[5 + 1][5 + 1]; // первая строка и столбец будут отданы под координаты
+        int[][] pole = new int[size + 1][size + 1]; // первая строка и столбец будут отданы под координаты
         for (int i = 0; i < pole.length; i++) {
             for (int j = 0; j < pole.length; j++) {
                 pole[i][0] = i;
@@ -117,7 +122,5 @@ public class lib {
             }
             System.out.println();
         }
-
     }
-
 }
