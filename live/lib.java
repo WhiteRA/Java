@@ -120,6 +120,7 @@ public class lib {
                 pole[0][j] = j;
                 System.out.print(pole[i][j] + " ");
             }
+
             System.out.println();
         }
     }
