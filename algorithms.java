@@ -1,99 +1,127 @@
 package jAVA;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class algorithms {
-
-    // вернуть левого потомка `A[i]`
-    private static int LEFT(int i) {
-        return (2 * i + 1);
-    }
-
-    // вернуть правого потомка `A[i]`
-    private static int RIGHT(int i) {
-        return (2 * i + 2);
-    }
-
-    // Вспомогательная функция для замены двух индексов в массиве
-    private static void swap(int[] A, int i, int j) {
-        int temp = A[i];
-        A[i] = A[j];
-        A[j] = temp;
-    }
-
-    // Рекурсивный алгоритм heapify-down. Узел с индексом `i` и
-    // два его прямых потомка нарушают свойство кучи
-    private static void heapify(int[] A, int i, int size) {
-        // получить левый и правый потомки узла с индексом `i`
-        int left = LEFT(i);
-        int right = RIGHT(i);
-
-        int largest = i;
-
-        // сравниваем `A[i]` с его левым и правым дочерними элементами
-        // и находим наибольшее значение
-        if (left < size && A[left] > A[i]) {
-            largest = left;
-        }
-
-        if (right < size && A[right] > A[largest]) {
-            largest = right;
-        }
-
-        // поменяться местами с потомком, имеющим большее значение и
-        // вызовите heapify-down для дочернего элемента
-        if (largest != i) {
-            swap(A, i, largest);
-            heapify(A, largest, size);
-        }
-    }
-
-    // Функция для удаления элемента с наивысшим приоритетом (присутствует в корне)
-    public static int pop(int[] A, int size) {
-        // если в куче нет элементов
-        if (size <= 0) {
-            return -1;
-        }
-
-        int top = A[0];
-
-        // заменяем корень кучи последним элементом
-        // массива
-        A[0] = A[size - 1];
-
-        // вызовите heapify-down на корневом узле
-        heapify(A, 0, size - 1);
-
-        return top;
-    }
-
-    // Функция для выполнения пирамидальной сортировки массива `A` размера `n`
-    public static void heapsort(int[] A) {
-        // строим приоритетную очередь и инициализируем ее заданным массивом
-        int n = A.length;
-
-        // Build-heap: вызывать heapify, начиная с последнего внутреннего
-        // узел до корневого узла
-        int i = (n - 2) / 2;
-        while (i >= 0) {
-            heapify(A, i--, n);
-        }
-
-        // несколько раз извлекаем из кучи, пока она не станет пустой
-        while (n > 0) {
-            A[n - 1] = pop(A, n);
-            n--;
-        }
-    }
-
-    // Реализация алгоритма Heapsort в Java
     public static void main(String[] args) {
-        int[] A = { 6, 4, 7, 1, 9, -2 };
+        SingleLinkList<Contact> contactList = new SingleLinkList<>();
 
-        // выполняем иерархическую сортировку массива
-        heapsort(A);
+        contactList.addToEnd(new Contact(121, "Иванов Иван Иванович", "+7987654321"));
+        contactList.addToEnd(new Contact(122, "Иванов Сергей Иванович", "+7987654322"));
+        contactList.addToEnd(new Contact(123, "Иванов Андрей Иванович", "+7987654323"));
+        contactList.addToEnd(new Contact(124, "Иванов Тимофей Иванович", "+7987654324"));
+        contactList.addToEnd(new Contact(125, "Иванов Александр Иванович", "+7987654325"));
 
-        // печатаем отсортированный массив
-        System.out.println(Arrays.toString(A));
+        for (Object contact : contactList) {
+            System.out.println(contact);
+        }
+        contactList.reverse();
+
+        System.out.println("-------------------------------------");
+
+        for (Object contact : contactList) {
+            System.out.println(contact);
+        }
+    }
+
+    static class Contact {
+
+        int id;
+        String name;
+        String phone;
+
+        public Contact(int id, String name, String phone) {
+            this.id = id;
+            this.name = name;
+            this.phone = phone;
+        }
+
+        @Override
+        public String toString() {
+            return "Contact{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", phone='" + phone + '\'' +
+                    '}';
+        }
+    }
+
+    /**
+     * Класс списка
+     *
+     * @param <T>
+     */
+    public static class SingleLinkList<T> implements Iterable {
+
+        ListItem<T> head;
+        ListItem<T> tail;
+
+        @Override
+        public Iterator iterator() {
+            return new Iterator<T>() {
+                ListItem<T> current = head;
+
+                @Override
+                public boolean hasNext() {
+                    return current != null;
+                }
+
+                @Override
+                public T next() {
+                    T data = current.data;
+                    current = current.next;
+                    return data;
+                }
+            };
+        }
+
+        /**
+         * Класс отдельного элемента
+         *
+         * @param <T>
+         */
+        private static class ListItem<T> {
+
+            T data;
+            ListItem<T> next;
+        }
+
+        // Голова пустая
+        public boolean isEmpty() {
+            return head == null;
+        }
+
+        // заполнение списка
+        public void addToEnd(T item) {
+
+            // Выделение памяти для списка
+            ListItem<T> newItem = new ListItem<>();
+            newItem.data = item;
+
+            // Если, голова и хвост пустая
+            if (isEmpty()) {
+                head = newItem;
+                tail = newItem;
+            } else { // Если, не пустая то передаём элементу адрес и ставим в хвост
+                tail.next = newItem;
+                tail = newItem;
+            }
+        }
+
+        // метод разворота списка
+        public void reverse() {
+            if (!isEmpty() && head.next != null) {// Если голова не равна нулю
+                tail = head;
+                ListItem<T> current = head.next;
+                head.next = null;
+                while (current != null) {
+                    ListItem<T> next = current.next;
+                    current.next = head;
+                    head = current;
+                    current = next;
+                }
+            }
+        }
     }
 }
