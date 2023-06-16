@@ -102,13 +102,13 @@ public class lib {
      * @param b принимает максимальное число
      * @return Возвращает случайное число число
      */
-    public static int ranmodNumber(int a, int b) {
+    public static int randomNumber(int a, int b) {
         int namber = (int) (Math.random() * b) + a;
         return namber;
     }
 
     /**
-     * Метод пострания поля (2х мерной интовой матрицы)
+     * Метод пострания поля (2х мерной ИНТовой матрицы)
      * 
      * @param size Определяет размер поля без учёта гранниц
      */
@@ -122,5 +122,9 @@ public class lib {
             }
             System.out.println();
         }
+    }
+
+    public static void gamer() {
+
     }
 }

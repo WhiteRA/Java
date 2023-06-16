@@ -1,5 +1,8 @@
 package jAVA.live;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class line {
     public static void main(String[] args) {
         // int[] arr = { 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 };
@@ -10,7 +13,10 @@ public class line {
         // lib.upper(mass);
         // lib.minMax(mass);
 
-        lib.pole(3);
-
+        List a = new ArrayList();
+        for (int i = 0; i < 9; i++) {
+            a.add(i, i);
+        }
+        System.out.println(a);
     }
 }
