@@ -112,19 +112,21 @@ public class lib {
      * 
      * @param size Определяет размер поля без учёта гранниц
      */
-    public static void pole(int size) {
-        int[][] pole = new int[size + 1][size + 1]; // первая строка и столбец будут отданы под координаты
-        for (int i = 0; i < pole.length; i++) {
-            for (int j = 0; j < pole.length; j++) {
-                pole[i][0] = i;
-                pole[0][j] = j;
-                System.out.print(pole[i][j] + " ");
+    public static void map(int size) {
+        final char PUSTO = '*';
+        final char HUMAN = 'X';
+        final char AI = 'O';
+        char[][] map = new char[size][size];
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map.length; j++) {
+                map[i][j] = '*';
+                System.out.print(map[i][j] + " ");
             }
             System.out.println();
         }
-    }
+    }   
 
-    public static void gamer() {
+    public static void symbol(){
 
     }
 }
