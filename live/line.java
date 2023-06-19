@@ -6,6 +6,9 @@ public class line {
         // int[] arr2 = new int[8];
         // int[] mass = { 0, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
         lib.initMap(3);
+        lib.printMap();
+        lib.gamer();
+        lib.printMap();
     }
 
 }
