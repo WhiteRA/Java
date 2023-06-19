@@ -3,6 +3,8 @@ package jAVA.live;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.xml.namespace.QName;
+
 public class lib {
     public static void miror(int[] a) {
         for (int i = 0; i < a.length; i++) {
@@ -107,26 +109,32 @@ public class lib {
         return namber;
     }
 
+    static char[][] map;
+    public static final char PUSTO = '*';
+    public static final char HUMAN = 'X';
+    public static final char AI = 'O';
     /**
      * Метод пострания поля (2х мерной ИНТовой матрицы)
      * 
      * @param size Определяет размер поля без учёта гранниц
      */
-    public static void map(int size) {
-        final char PUSTO = '*';
-        final char HUMAN = 'X';
-        final char AI = 'O';
+    public static void initMap(int size) {
+        System.out.println("0 1 2");
         char[][] map = new char[size][size];
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map.length; j++) {
-                map[i][j] = '*';
+                map[i][j] = PUSTO;
                 System.out.print(map[i][j] + " ");
             }
             System.out.println();
         }
     }   
 
-    public static void symbol(){
-
+    public static void gamer(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Координыта ячейчи x - y");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        map[x][y] = HUMAN;
     }
 }
