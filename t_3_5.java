@@ -1,5 +1,3 @@
-package jAVA;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -30,7 +28,7 @@ public class t_3_5 {
 
     public static void main(String[] args) {
         int[] nums = { 1, 2, 3 };
-        Permutations p = new Permutations();
+        t_3_5 p = new t_3_5();
         ArrayList<ArrayList<Integer>> result = p.permutations(nums);
         System.out.println(result);
     }
