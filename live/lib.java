@@ -1,11 +1,9 @@
-package jAVA.live;
+package live;
 
-import java.sql.Time;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import javax.xml.namespace.QName;
 
 public class lib {
     public static void miror(int[] a) {
@@ -147,16 +145,22 @@ public class lib {
 
     public static void gamer()throws InterruptedException  {
         Scanner sc = new Scanner(System.in);
+        System.out.println();
         TimeUnit.SECONDS.sleep(1);
         System.out.println(" Ваш ход ");
         System.out.println("Координыта ячейчи X - y");
+        System.out.println();
         System.out.println(" X = ? ");
         int x = sc.nextInt();
         System.out.println(" Y = ? ");
         int y = sc.nextInt();
+        System.out.println();
         TimeUnit.SECONDS.sleep(1);
         if (x > map.length && y > map.length) {
-            System.out.println(" Выход за пределы поля. ");
+            System.out.println(" Выход за пределы поля ");
+            gamer();
+        }if (map[y][x] == HUMAN) {
+            System.out.println(" Клетка занята ");
             gamer();
         } else {
             map[y - 1][x - 1] = HUMAN;
@@ -164,3 +168,5 @@ public class lib {
         }
     }
 }
+
+
