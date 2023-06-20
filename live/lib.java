@@ -156,16 +156,8 @@ public class lib {
         int y = sc.nextInt();
         System.out.println();
         TimeUnit.SECONDS.sleep(1);
-        if (x > map.length && y > map.length) {
-            System.out.println(" Выход за пределы поля ");
-            gamer();
-        }if (map[y][x] == HUMAN) {
-            System.out.println(" Клетка занята ");
-            gamer();
-        } else {
-            map[y - 1][x - 1] = HUMAN;
-            sc.close();
-        }
+        map[y - 1][x - 1] = HUMAN;
+        sc.close();
     }
 }
 
