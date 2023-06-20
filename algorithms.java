@@ -1,127 +1,142 @@
 package jAVA;
 
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.Scanner;
+
+class node {
+
+    node left, right;
+    int data;
+
+    // красный ==> true, черный ==> false
+    boolean color;
+
+    node(int data) {
+        this.data = data;
+        left = null;
+        right = null;
+
+        // Новый узел, который создается, является всегда красного цвета.
+        color = true;
+    }
+}
 
 public class algorithms {
+    private static node root = null;
+
+    // Функция для поворота узла против часовой стрелки.
+    node rotateLeft(node myNode) {
+        System.out.printf("поворот влево!!\n");
+        node child = myNode.right;
+        node childLeft = child.left;
+
+        child.left = myNode;
+        myNode.right = childLeft;
+
+        return child;
+    }
+
+    // Функция для поворота узла по часовой стрелке.
+    node rotateRight(node myNode) {
+        System.out.printf("вращение вправо\n");
+        node child = myNode.left;
+        node childRight = child.right;
+
+        child.right = myNode;
+        myNode.left = childRight;
+
+        return child;
+    }
+
+    // Функция для проверки того, является ли узел красного цвета или нет.
+    boolean isRed(node myNode) {
+        if (myNode == null) {
+            return false;
+        }
+        return (myNode.color == true);
+    }
+
+    // Функция для изменения цвета двух узлы.
+    void swapColors(node node1, node node2) {
+        boolean temp = node1.color;
+        node1.color = node2.color;
+        node2.color = temp;
+    }
+
+    // вставка в левостороннее Красно-черное дерево.
+    node insert(node myNode, int data) {
+        // Обычный код вставки для любого двоичного файла
+        if (myNode == null) {
+            return new node(data);
+        }
+
+        if (data < myNode.data) {
+            myNode.left = insert(myNode.left, data);
+        } else if (data > myNode.data) {
+            myNode.right = insert(myNode.right, data);
+        } else {
+            return myNode;
+        }
+
+        // случай 1.
+        // когда правый дочерний элемент красный, а левый дочерний элемент черный или не
+        // существует.
+        if (isRed(myNode.right) && !isRed(myNode.left)) {
+            // Повернуть узел влево
+            myNode = rotateLeft(myNode);
+
+            // Поменять местами цвета дочернего узла всегда должен быть красным
+            swapColors(myNode, myNode.left);
+        }
+
+        // случай 2
+        // когда левый ребенок, а также левый внук выделены красным цветом
+        if (isRed(myNode.left) && isRed(myNode.left.left)) {
+            // Повернуть узел в право
+            myNode = rotateRight(myNode);
+            swapColors(myNode, myNode.right);
+        }
+
+        // случай 3
+        // когда и левый, и правый дочерние элементы окрашены в красный цвет.
+        if (isRed(myNode.left) && isRed(myNode.right)) {
+            // Инвертировать цвет узла это левый и правый дети.
+            myNode.color = !myNode.color;
+
+            // Изменить цвет на черный.
+            myNode.left.color = false;
+            myNode.right.color = false;
+        }
+
+        return myNode;
+    }
+
+    // Обход по порядку
+    void inorder(node node) {
+        if (node != null) {
+            inorder(node.left);
+            char c = '●';
+            if (node.color == false)
+                c = '◯';
+            System.out.print(node.data + "" + c + " ");
+            inorder(node.right);
+        }
+    }
+
     public static void main(String[] args) {
-        SingleLinkList<Contact> contactList = new SingleLinkList<>();
 
-        contactList.addToEnd(new Contact(121, "Иванов Иван Иванович", "+7987654321"));
-        contactList.addToEnd(new Contact(122, "Иванов Сергей Иванович", "+7987654322"));
-        contactList.addToEnd(new Contact(123, "Иванов Андрей Иванович", "+7987654323"));
-        contactList.addToEnd(new Contact(124, "Иванов Тимофей Иванович", "+7987654324"));
-        contactList.addToEnd(new Contact(125, "Иванов Александр Иванович", "+7987654325"));
+        algorithms node = new algorithms();
+        Scanner scan = new Scanner(System.in);
 
-        for (Object contact : contactList) {
-            System.out.println(contact);
-        }
-        contactList.reverse();
+        char ch;
+        do {
+            System.out.println("Введите целое число");
 
-        System.out.println("-------------------------------------");
+            int num = scan.nextInt();
+            root = node.insert(root, num);
 
-        for (Object contact : contactList) {
-            System.out.println(contact);
-        }
-    }
-
-    static class Contact {
-
-        int id;
-        String name;
-        String phone;
-
-        public Contact(int id, String name, String phone) {
-            this.id = id;
-            this.name = name;
-            this.phone = phone;
-        }
-
-        @Override
-        public String toString() {
-            return "Contact{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", phone='" + phone + '\'' +
-                    '}';
-        }
-    }
-
-    /**
-     * Класс списка
-     *
-     * @param <T>
-     */
-    public static class SingleLinkList<T> implements Iterable {
-
-        ListItem<T> head;
-        ListItem<T> tail;
-
-        @Override
-        public Iterator iterator() {
-            return new Iterator<T>() {
-                ListItem<T> current = head;
-
-                @Override
-                public boolean hasNext() {
-                    return current != null;
-                }
-
-                @Override
-                public T next() {
-                    T data = current.data;
-                    current = current.next;
-                    return data;
-                }
-            };
-        }
-
-        /**
-         * Класс отдельного элемента
-         *
-         * @param <T>
-         */
-        private static class ListItem<T> {
-
-            T data;
-            ListItem<T> next;
-        }
-
-        // Голова пустая
-        public boolean isEmpty() {
-            return head == null;
-        }
-
-        // заполнение списка
-        public void addToEnd(T item) {
-
-            // Выделение памяти для списка
-            ListItem<T> newItem = new ListItem<>();
-            newItem.data = item;
-
-            // Если, голова и хвост пустая
-            if (isEmpty()) {
-                head = newItem;
-                tail = newItem;
-            } else { // Если, не пустая то передаём элементу адрес и ставим в хвост
-                tail.next = newItem;
-                tail = newItem;
-            }
-        }
-
-        // метод разворота списка
-        public void reverse() {
-            if (!isEmpty() && head.next != null) {// Если голова не равна нулю
-                tail = head;
-                ListItem<T> current = head.next;
-                head.next = null;
-                while (current != null) {
-                    ListItem<T> next = current.next;
-                    current.next = head;
-                    head = current;
-                    current = next;
-                }
-            }
-        }
+            node.inorder(root);
+            System.out.println("\nВы хотите продолжить? (введите y или n)");
+            ch = scan.next().charAt(0);
+        } while (ch == 'Y' || ch == 'y');
     }
 }
