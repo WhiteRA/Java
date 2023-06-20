@@ -109,13 +109,18 @@ public class lib {
         return namber;
     }
 
+    /*
+     * От сюда начинается код относящийся к крестики-нолики
+     */
     static char[][] map;
     public static final char PUSTO = '*';
     public static final char HUMAN = 'X';
     public static final char AI = 'O';
+
     /**
      * Метод пострания поля (2х мерной ЧАРовской матрицы)
      * Который ссылается на static char[][] map
+     * 
      * @param size Определяет размер поля без учёта гранниц
      */
     public static void initMap(int size) {
@@ -125,20 +130,20 @@ public class lib {
                 map[i][j] = PUSTO;
             }
         }
-    }   
+    }
 
     public static void printMap() {
         System.out.println("0 1 2 3");
         for (int i = 0; i < map.length; i++) {
-                 System.out.print((i+1) + " ");
+            System.out.print((i + 1) + " ");
             for (int j = 0; j < map.length; j++) {
-                 System.out.print(map[i][j] + " ");
+                System.out.print(map[i][j] + " ");
             }
             System.out.println();
         }
     }
 
-    public static void gamer(){
+    public static void gamer() {
         Scanner sc = new Scanner(System.in);
         System.out.println(" Ваш ход ");
         System.out.println("Координыта ячейчи X - y");
@@ -146,11 +151,11 @@ public class lib {
         int x = sc.nextInt();
         System.out.println(" Y = ? ");
         int y = sc.nextInt();
-        if (x > map.length && y > map.length ) {
+        if (x > map.length && y > map.length) {
             System.out.println(" Выход за пределы поля. ");
             gamer();
-        }else{
-            map[y-1][x-1] = HUMAN;
+        } else {
+            map[y - 1][x - 1] = HUMAN;
             sc.close();
         }
     }
