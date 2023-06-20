@@ -1,7 +1,9 @@
 package jAVA.live;
 
+import java.sql.Time;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import javax.xml.namespace.QName;
 
@@ -143,8 +145,9 @@ public class lib {
         }
     }
 
-    public static void gamer() {
+    public static void gamer() throws InterruptedException {
         Scanner sc = new Scanner(System.in);
+        TimeUnit.HOURS.sleep(15);
         System.out.println(" Ваш ход ");
         System.out.println("Координыта ячейчи X - y");
         System.out.println(" X = ? ");
