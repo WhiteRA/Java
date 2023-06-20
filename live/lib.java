@@ -145,15 +145,16 @@ public class lib {
         }
     }
 
-    public static void gamer() throws InterruptedException {
+    public static void gamer()throws InterruptedException  {
         Scanner sc = new Scanner(System.in);
-        TimeUnit.HOURS.sleep(15);
+        TimeUnit.SECONDS.sleep(1);
         System.out.println(" Ваш ход ");
         System.out.println("Координыта ячейчи X - y");
         System.out.println(" X = ? ");
         int x = sc.nextInt();
         System.out.println(" Y = ? ");
         int y = sc.nextInt();
+        TimeUnit.SECONDS.sleep(1);
         if (x > map.length && y > map.length) {
             System.out.println(" Выход за пределы поля. ");
             gamer();

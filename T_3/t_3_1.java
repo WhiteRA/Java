@@ -1,4 +1,4 @@
-package jAVA.T_3;
+package T_3;
 
 import javax.swing.text.html.ListView;
 

@@ -1,4 +1,4 @@
-package jAVA.T_4;
+package T_4;
 
 public class t_4_1 {
     // метод для вывода элементов списка в обратном порядке

@@ -1,4 +1,4 @@
-package jAVA.T_4;
+package T_4;
 
 import java.util.Stack;
 
