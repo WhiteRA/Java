@@ -1,6 +1,7 @@
 package live;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class lib {
@@ -170,5 +171,9 @@ public class lib {
         if (x < 0 || y < 0 || x > map.length || y > map.length)
             return false;
         return map[y][x] == PUSTO;
+    }
+
+    public static void ai() {
+
     }
 }
