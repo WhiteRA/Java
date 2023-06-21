@@ -2,7 +2,6 @@ package live;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class lib {
     public static void miror(int[] a) {
@@ -131,6 +130,9 @@ public class lib {
         }
     }
 
+    /**
+     * Печать поля
+     */
     public static void printMap() {
         System.out.println("0 1 2 3");
         for (int i = 0; i < map.length; i++) {
@@ -142,12 +144,35 @@ public class lib {
         }
     }
 
+    /**
+     * Ход игрока
+     */
     public static void gamer() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("X - ");
+        System.out.print(" X - ");
         int x = sc.nextInt();
-        System.out.println("Y - ");
+        System.out.print(" Y - ");
         int y = sc.nextInt();
-        map[y - 1][x - 1] = HUMAN;
+        chekSquare(x, y);
+        sc.close();
+    }
+
+    /**
+     * Проверка состояния клетки
+     */
+    private static void chekSquare(int x, int y) {
+        switch (map[y][x]) {
+            case HUMAN:
+                System.out.println(" Клетка занята");
+                break;
+            case AI:
+                System.out.println(" Клетка занята");
+                break;
+
+            default:
+                map[y][x] = HUMAN;
+                printMap();
+                break;
+        }
     }
 }

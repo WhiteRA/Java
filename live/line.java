@@ -9,8 +9,6 @@ public class line {
         lib.printMap();
         lib.gamer();
         lib.printMap();
-        lib.gamer();
-        lib.printMap();
     }
 
 }
