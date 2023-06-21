@@ -134,6 +134,7 @@ public class lib {
      * Печать поля
      */
     public static void printMap() {
+        System.out.println();
         System.out.println("0 1 2 3");
         for (int i = 0; i < map.length; i++) {
             System.out.print((i + 1) + " ");
@@ -149,31 +150,29 @@ public class lib {
      */
     public static void gamer() {
         Scanner sc = new Scanner(System.in);
-        System.out.print(" Твой ход ");
-        System.out.print(" X - ");
-        int x = sc.nextInt();
-        System.out.print(" Y - ");
-        int y = sc.nextInt();
-        chekSquare(x, y);
+        int x = 0;
+        int y = 0;
+        do {
+            System.out.println(" Твой ход ");
+            System.out.print(" X - ");
+            x = sc.nextInt() - 1;
+            System.out.print("/ Y - ");
+            y = sc.nextInt() - 1;
+        } while (!cellEmpty(x, y));
+        map[y][x] = HUMAN;
         sc.close();
     }
 
     /**
-     * Проверка состояния клетки
+     * Проверка пустой ячейки
+     * 
+     * @param x координата ячейки
+     * @param y координата ячейки
+     * @return булеан если свободно тру, если занята клетка фолс
      */
-    private static void chekSquare(int x, int y) {
-        switch (map[y][x]) {
-            case HUMAN:
-                System.out.println(" Клетка занята");
-                break;
-            case AI:
-                System.out.println(" Клетка занята");
-                break;
-
-            default:
-                map[y][x] = HUMAN;
-                printMap();
-                break;
-        }
+    private static boolean cellEmpty(int x, int y) {
+        if (map[y][x] == PUSTO)
+            return true;
+        return false;
     }
 }
