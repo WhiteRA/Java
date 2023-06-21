@@ -10,7 +10,7 @@ public class line {
         lib.gamer();
         lib.printMap();
         lib.gamer();
-
+        lib.printMap();
     }
 
 }

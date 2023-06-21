@@ -150,17 +150,13 @@ public class lib {
      */
     public static void gamer() {
         Scanner sc = new Scanner(System.in);
-        int x = 0;
-        int y = 0;
+        int x, y;
         do {
             System.out.println(" Твой ход ");
-            System.out.print(" X - ");
             x = sc.nextInt() - 1;
-            System.out.print("/ Y - ");
             y = sc.nextInt() - 1;
         } while (!cellEmpty(x, y));
         map[y][x] = HUMAN;
-        sc.close();
     }
 
     /**
@@ -171,8 +167,8 @@ public class lib {
      * @return булеан если свободно тру, если занята клетка фолс
      */
     private static boolean cellEmpty(int x, int y) {
-        if (map[y][x] == PUSTO)
-            return true;
-        return false;
+        if (x < 0 || y < 0 || x > map.length || y > map.length)
+            return false;
+        return map[y][x] == PUSTO;
     }
 }
