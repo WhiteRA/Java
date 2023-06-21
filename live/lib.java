@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-
 public class lib {
     public static void miror(int[] a) {
         for (int i = 0; i < a.length; i++) {
@@ -143,29 +142,12 @@ public class lib {
         }
     }
 
-    public static void gamer()throws InterruptedException  {
+    public static void gamer() {
         Scanner sc = new Scanner(System.in);
-        System.out.println();
-        int x, y;
-        do {
-            System.out.println(" Ваш ход ");
-            System.out.println("Координыта ячейчи X - Y");
-            System.out.println();
-            System.out.println(" X = ? ");
-            x = sc.nextInt();
-            System.out.println(" Y = ? ");
-            y = sc.nextInt();
-            System.out.println();
-            TimeUnit.SECONDS.sleep(1);
-        } while (!busy(y, x));
-        TimeUnit.SECONDS.sleep(1);
-        sc.close();
-    }
-
-    public static boolean busy(int x, int y){
-        if (map[y][x] == PUSTO) return true;
-        return false;
+        System.out.println("X - ");
+        int x = sc.nextInt();
+        System.out.println("Y - ");
+        int y = sc.nextInt();
+        map[y - 1][x - 1] = HUMAN;
     }
 }
-
-
