@@ -149,6 +149,7 @@ public class lib {
      */
     public static void gamer() {
         Scanner sc = new Scanner(System.in);
+        System.out.print(" Твой ход ");
         System.out.print(" X - ");
         int x = sc.nextInt();
         System.out.print(" Y - ");
