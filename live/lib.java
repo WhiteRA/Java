@@ -96,18 +96,6 @@ public class lib {
         return a;
     }
 
-    /**
-     * Генерирует случайное число в заданых приделах
-     * 
-     * @param a принимает минимальное число
-     * @param b принимает максимальное число
-     * @return Возвращает случайное число число
-     */
-    public static int rndNum(int a, int b) {
-        int namber = (int) (Math.random() * b) + a;
-        return namber;
-    }
-
     /*
      * От сюда начинается код относящийся к крестики-нолики
      */
@@ -115,6 +103,7 @@ public class lib {
     public static final char PUSTO = '*';
     public static final char HUMAN = 'X';
     public static final char AI = 'O';
+    static Random rnd = new Random();
 
     /**
      * Метод пострания поля (2х мерной ЧАРовской матрицы)
@@ -177,14 +166,23 @@ public class lib {
         int x, y;
         do {
             System.out.print(" Ход компа ");
-            x = rndNum(1, map.length) - 1;
-            y = rndNum(1, map.length) - 1;
+            x = rnd.nextInt(3);
+            y = rnd.nextInt(3);
         } while (!cellEmpty(x, y));
         map[y][x] = AI;
     }
 
-    public static boolean win() {
+    public static void win() {
 
+    }
+
+    public static boolean mapFull() {
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map.length; j++) {
+                if (map[i][j] == PUSTO)
+                    return false;
+            }
+        }
         return true;
     }
 
