@@ -103,7 +103,7 @@ public class lib {
      * @param b принимает максимальное число
      * @return Возвращает случайное число число
      */
-    public static int randomNumber(int a, int b) {
+    public static int rndNum(int a, int b) {
         int namber = (int) (Math.random() * b) + a;
         return namber;
     }
@@ -174,6 +174,13 @@ public class lib {
     }
 
     public static void ai() {
-
+        int x, y;
+        do {
+            System.out.print(" Ход компа ");
+            x = rndNum(1, map.length) - 1;
+            y = rndNum(1, map.length) - 1;
+        } while (!cellEmpty(x, y));
+        map[y][x] = AI;
     }
+
 }

@@ -7,9 +7,11 @@ public class line {
         // int[] mass = { 0, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
         lib.initMap(3);
         lib.printMap();
-        lib.gamer();
+        lib.ai();
         lib.printMap();
-        lib.gamer();
+        lib.ai();
+        lib.printMap();
+        lib.ai();
         lib.printMap();
     }
 
