@@ -172,40 +172,6 @@ public class lib {
         map[y][x] = AI;
     }
 
-    public static boolean win() {
-        int human = 0;
-        int ai = 0;
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map.length; j++) {
-                if (map[i][j] == HUMAN) {
-                    human++;
-                    if (human == map.length) {
-                        System.out.println(" ПОБЕДА ");
-                        return true;
-                    }
-                    if (ai == map.length) {
-                        System.out.println(" ПРОИГРЫШ ");
-                        return true;
-                    }
-                }
-            }
-        }
-        for (int i = 0; i < map.length; i++) {
-            if (map[i][i] == HUMAN) {
-                human++;
-                if (human == map.length) {
-                    System.out.println(" ПОБЕДА ");
-                    return true;
-                }
-                if (ai == map.length) {
-                    System.out.println(" ПРОИГРЫШ ");
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     public static boolean mapFull() {
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map.length; j++) {
@@ -214,6 +180,23 @@ public class lib {
             }
         }
         return true;
+    }
+
+    public static boolean chekWin(char dot) {
+
+        for (int i = 0; i < 3; i++) { // проверяем строки и столбцы
+            if (map[i][0] == dot && map[i][1] == dot && map[i][2] == dot)
+                return true; // строки
+            if (map[0][i] == dot && map[1][i] == dot && map[2][i] == dot)
+                return true; // столбцы
+        }
+        // проверяем диагонали
+        if (map[0][0] == dot && map[1][1] == dot && map[2][2] == dot)
+            return true;
+        if (map[0][2] == dot && map[1][1] == dot && map[2][0] == dot)
+            return true;
+
+        return false; // вернуть ложь, если условия не выполняются
     }
 
 }
