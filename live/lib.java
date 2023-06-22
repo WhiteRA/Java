@@ -172,8 +172,38 @@ public class lib {
         map[y][x] = AI;
     }
 
-    public static void win() {
-
+    public static boolean win() {
+        int human = 0;
+        int ai = 0;
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map.length; j++) {
+                if (map[i][j] == HUMAN) {
+                    human++;
+                    if (human == map.length) {
+                        System.out.println(" ПОБЕДА ");
+                        return true;
+                    }
+                    if (ai == map.length) {
+                        System.out.println(" ПРОИГРЫШ ");
+                        return true;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < map.length; i++) {
+            if (map[i][i] == HUMAN) {
+                human++;
+                if (human == map.length) {
+                    System.out.println(" ПОБЕДА ");
+                    return true;
+                }
+                if (ai == map.length) {
+                    System.out.println(" ПРОИГРЫШ ");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static boolean mapFull() {
