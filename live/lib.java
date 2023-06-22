@@ -183,4 +183,9 @@ public class lib {
         map[y][x] = AI;
     }
 
+    public static boolean win() {
+
+        return true;
+    }
+
 }
