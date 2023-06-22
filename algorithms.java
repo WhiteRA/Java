@@ -137,5 +137,6 @@ public class algorithms {
             System.out.println("\nВы хотите продолжить? (введите y или n)");
             ch = scan.next().charAt(0);
         } while (ch == 'Y' || ch == 'y');
+        scan.close();
     }
 }
