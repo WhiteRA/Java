@@ -221,8 +221,6 @@ public class lib {
                 break;
             }
             lib.printMap();
-
         }
     }
-
 }
