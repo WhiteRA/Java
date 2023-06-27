@@ -2,8 +2,8 @@ package live;
 
 public class line {
     public static void main(String[] args) {
-        // lib.game();
-
+        Sotrudnik pervij = new Sotrudnik();
+        System.out.println(pervij);
     }
 
 }
