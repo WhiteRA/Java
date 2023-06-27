@@ -10,7 +10,6 @@ public class Sotrudnik {
 
     public Sotrudnik(String FIO, int vozrast) {
         this.FIO = FIO;
-        this.doljnost = doljnost;
         this.vozrast = vozrast;
     }
 
