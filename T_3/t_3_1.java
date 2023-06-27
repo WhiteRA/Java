@@ -1,7 +1,5 @@
 package T_3;
 
-import javax.swing.text.html.ListView;
-
 public class t_3_1 {
     public static void main(String[] args) {
         // создаем массив записей
