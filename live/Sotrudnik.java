@@ -8,7 +8,7 @@ public class Sotrudnik {
     int zarplata;
     int vozrast;
 
-    public Sotrudnik(String FIO, String doljnost, int vozrast) {
+    public Sotrudnik(String FIO, String doljnost, String string) {
         this.FIO = FIO;
         this.doljnost = doljnost;
         this.vozrast = vozrast;
