@@ -36,11 +36,11 @@ public class t_3_2 {
 
     public static void main(String[] args) {
         List<Product> products = new ArrayList<>();
-        products.add(new Product("Product A", "Country A", 100, 20, "Grade 1"));
-        products.add(new Product("Product B", "Country B", 200, 25, "Grade 2"));
-        products.add(new Product("Product C", "Country C", 150, 15, "Grade 1"));
-        products.add(new Product("Product D", "Country D", 120, 18, "Grade 2"));
-        products.add(new Product("Product E", "Country E", 180, 22, "Grade 1"));
+        // products.add(new Product("Product A", "Country A", 100, 20, "Grade 1"));
+        // products.add(new Product("Product B", "Country B", 200, 25, "Grade 2"));
+        // products.add(new Product("Product C", "Country C", 150, 15, "Grade 1"));
+        // products.add(new Product("Product D", "Country D", 120, 18, "Grade 2"));
+        // products.add(new Product("Product E", "Country E", 180, 22, "Grade 1"));
 
         String targetGrade = "Grade 1";
         List<String> cheapestProducts = new ArrayList<>();

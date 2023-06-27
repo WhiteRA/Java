@@ -42,10 +42,10 @@ public class t_3_3 {
 
     public static void main(String[] args) {
         ArrayList<Book> books = new ArrayList<>();
-        books.add(new Book("Java Programming", "John Smith", 29.99, 2015, 400));
-        books.add(new Book("Python for Beginners", "Alice Brown", 24.99, 2012, 300));
-        books.add(new Book("C++ Crash Course", "Bob Adams", 34.99, 2013, 500));
-        books.add(new Book("JavaScript Essentials", "David Lee", 19.99, 2011, 250));
+        // books.add(new Book("Java Programming", "John Smith", 29.99, 2015, 400));
+        // books.add(new Book("Python for Beginners", "Alice Brown", 24.99, 2012, 300));
+        // books.add(new Book("C++ Crash Course", "Bob Adams", 34.99, 2013, 500));
+        // books.add(new Book("JavaScript Essentials", "David Lee", 19.99, 2011, 250));
 
         ArrayList<String> result = new ArrayList<>();
 
