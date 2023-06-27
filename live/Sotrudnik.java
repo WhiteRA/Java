@@ -8,13 +8,19 @@ public class Sotrudnik {
     int zarplata;
     int vozrast;
 
-    public Sotrudnik(String FIO, String doljnost, String string) {
+    public Sotrudnik(String FIO, int vozrast) {
         this.FIO = FIO;
         this.doljnost = doljnost;
         this.vozrast = vozrast;
     }
 
     public void print() {
-        System.out.printf("ФИО " + FIO + " Должность " + doljnost + " Возраст " + vozrast);
+        System.out.println("ФИО " + FIO + " Должность " + doljnost + " Возраст " + vozrast);
+        System.out.println();
     }
+
+    public int getAge() {
+        return vozrast;
+    }
+
 }
