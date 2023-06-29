@@ -1,9 +1,9 @@
 package OOP;
 
 public class Product {
-    private String name;
-    private double price;
-    private double rating;
+    String name;
+    double price;
+    double rating;
 
     public Product(String name, double price, double rating) {
         this.name = name;
@@ -12,7 +12,7 @@ public class Product {
     }
 
     public String getInfo() {
-        return String.format("Название: %d; Цена: %d; Рейтинг: %D", name, price, rating);
+        return String.format("Название: %s; Цена: %.02f; Рейтинг: %.01f", name, price, rating);
     }
 
     /*
