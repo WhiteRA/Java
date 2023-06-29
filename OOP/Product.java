@@ -11,7 +11,7 @@ public class Product {
         this.rating = rating;
     }
 
-    public String getInfo() {
+    public String prnProduct() {
         return String.format("Название: %s; Цена: %.02f; Рейтинг: %.01f", name, price, rating);
     }
 
