@@ -31,7 +31,7 @@ public class Product {
         }
     }
 
-    public String getProduct() {
+    public String getInfo() {
         return String.format("Название: %s; Цена: %.02f; Рейтинг: %.01f", name, price, rating);
     }
 
