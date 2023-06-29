@@ -11,4 +11,15 @@ public class Product {
         this.rating = rating;
     }
 
+    public String getInfo() {
+        return String.format("Название: %d; Цена: %d; Рейтинг: %D", name, price, rating);
+    }
+
+    /*
+     * @Override
+     * public String toString() {
+     * return prnProduct();
+     * }
+     */
+
 }
