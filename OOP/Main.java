@@ -11,7 +11,7 @@ public class Main {
         pr2[1] = new Product("Product 5", 59.99, 5.2);
         pr2[2] = new Product("Product 6", 69.99, 6.2);
         
-        
+
         Category[] cat1 = new Category[2];
         cat1[0] = new Category("Category 1", pr1[0]);
         cat1[1] = new Category("Category 1", pr1[1]);
@@ -19,8 +19,17 @@ public class Main {
         cat2[0] = new Category("Category 2", pr2[0]);
         cat2[0] = new Category("Category 2", pr2[1]);
 
+
         Basket[] bas1 = new Basket[2];
         bas1[0] = new Basket(pr1[0]); 
+        bas1[1] = new Basket(pr1[2]);
+        bas1[2] = new Basket(pr2[2]);
+
+        Basket[] bas2 = new Basket[2];
+        bas2[0] = new Basket(pr2[0]); 
+        bas2[1] = new Basket(pr2[2]);
+        bas2[2] = new Basket(pr1[2]);
+        
         
         User user1 = new User("user1@mail.ru", "null_1");
         User user2 = new User("user2@mail.ru", "null_2");
