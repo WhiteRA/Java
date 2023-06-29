@@ -11,10 +11,6 @@ public class Product {
         this.rating = rating;
     }
 
-    public Product(){
-        
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -36,7 +32,7 @@ public class Product {
 
     }
 
-    public String prnProduct() {
+    public String getProduct() {
         return String.format("Название: %s; Цена: %.02f; Рейтинг: %.01f", name, price, rating);
     }
 

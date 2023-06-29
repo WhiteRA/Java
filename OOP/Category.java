@@ -1,24 +1,33 @@
 package OOP;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Category {
     private String name;
-    private Product[] products;
+    private List<Product> products = new ArrayList<>();
 
-    public Category(String name, Product[] products) {
-        this.name = name;
-        this.products = products;
+    public Category(){
     }
 
-
-    public Category(String name, Product product) {
+    public String getCategory(){
+      return name;
     }
 
+    public String setCategory(String name){
+      return this.name = name;
+    }
 
-    public String getName() {
-        return name;
+    public void addProdact(Product product){
+        products.add(product);
     }
-    public Product[] getProducts() {
-        return products;
-    }
+
+    public void removeProduct(Product product) {
+    products.remove(product);
+  }
+    
+  public String getInfo(){
+    return String.format("Название категории - %s", name);
+  }
 
 }
