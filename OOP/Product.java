@@ -15,11 +15,4 @@ public class Product {
         return String.format("Название: %s; Цена: %.02f; Рейтинг: %.01f", name, price, rating);
     }
 
-    /*
-     * @Override
-     * public String toString() {
-     * return prnProduct();
-     * }
-     */
-
 }
