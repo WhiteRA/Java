@@ -7,8 +7,7 @@ public class Main {
         prn[1] = new Product("Product 2", 29.99, 2.2);
         prn[2] = new Product("Product 3", 39.99, 3.2);
         for (int i = 0; i < prn.length; i++) {
-            prn[i].prnProduct();
+            System.out.println(prn[i].prnProduct());
         }
-
     }
 }
