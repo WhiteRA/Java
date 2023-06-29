@@ -1,7 +1,7 @@
 package OOP;
 
 public class Basket {
-    Product[] products;
+    private Product[] products;
 
     public Product[] getProducts() {
         return products;
