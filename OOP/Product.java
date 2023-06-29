@@ -11,6 +11,10 @@ public class Product {
         this.rating = rating;
     }
 
+    public Product(){
+        
+    }
+
     public void setName(String name) {
         this.name = name;
     }
