@@ -1,9 +1,9 @@
 package OOP;
 
 public class Product {
-    String name;
-    double price;
-    double rating;
+    private String name;
+    private double price;
+    private double rating;
 
     public Product(String name, double price, double rating) {
         this.name = name;
