@@ -9,11 +9,4 @@ public class Category {
         this.products = products;
     }
 
-    public String getname() {
-        return name;
-    }
-
-    public Product[] getProduct() {
-        return products;
-    }
 }
