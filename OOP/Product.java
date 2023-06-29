@@ -29,7 +29,6 @@ public class Product {
         } else {
             System.out.println(" Рейтинг не может быть меньше 0 ");
         }
-
     }
 
     public String getProduct() {

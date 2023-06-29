@@ -6,6 +6,12 @@ import java.util.List;
 public class Category {
     private String name;
     private List<Product> products = new ArrayList<>();
+    public int length;
+
+    public Category(String name, List<Product> products){
+      this.name = name;
+      this.products = products;
+    }
 
     public Category(){
     }
@@ -29,5 +35,9 @@ public class Category {
   public String getInfo(){
     return String.format("Название категории - %s", name);
   }
+
+public int syze() {
+    return 0;
+}
 
 }
