@@ -30,5 +30,7 @@ public class Main {
         user2.getBasket().addProduct(product2);
         user2.getBasket().addProduct(product4);
 
+        System.out.println();
+
     }
 }
