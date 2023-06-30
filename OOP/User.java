@@ -5,7 +5,7 @@ public class User {
     private String password;
     private Basket basket;
 
-    public User(String login, String password, Basket basket) {
+    public User(String login, String password) {
         this.login = login;
         this.password = password;
         basket = new Basket();
@@ -26,7 +26,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
 
 }

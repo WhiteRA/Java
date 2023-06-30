@@ -27,4 +27,8 @@ public class Category {
     public void delProduct(Product product) {
         products.remove(product);
     }
+
+    public Product[] getProducts() {
+        return null;
+    }
 }
