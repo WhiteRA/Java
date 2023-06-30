@@ -5,8 +5,6 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Category сategory_1 = new Category();
-
         // Создал товары
         ArrayList<Product> prod = new ArrayList<Product>();
         for (int i = 0; i < 10; i++) {
@@ -16,5 +14,10 @@ public class Main {
             System.out.println(prod.get(i).getInfo());
         }
 
+        System.out.println();
+
+        // Создал категорию и добавил в неё товары из листа prod.
+        Category cat = new Category("Category 1", prod);
+        System.out.println(cat.getInfo());
     }
 }

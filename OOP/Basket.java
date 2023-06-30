@@ -1,9 +1,10 @@
 package OOP;
 
 public class Basket {
-    private Product[] products;
+    private String products;
 
-    
-
+    public Basket(String products) {
+        this.products = products;
+    }
 
 }
