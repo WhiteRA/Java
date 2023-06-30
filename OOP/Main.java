@@ -19,5 +19,6 @@ public class Main {
         // Создал категорию и добавил в неё товары из листа prod.
         Category cat = new Category("Category 1", prod);
         System.out.println(cat.getInfo());
+
     }
 }
