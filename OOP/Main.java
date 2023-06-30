@@ -1,5 +1,7 @@
 package OOP;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -23,8 +25,10 @@ public class Main {
         User user2 = new User("user2", "password2");
 
         // Добавляем товары в корзину пользователей
-        user1.getBasket();
-
+        user1.getBasket().addProduct(product1);
+        user1.getBasket().addProduct(product3);
+        user2.getBasket().addProduct(product2);
+        user2.getBasket().addProduct(product4);
 
     }
 }
