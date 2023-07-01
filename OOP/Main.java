@@ -1,7 +1,5 @@
 package OOP;
 
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -29,8 +27,6 @@ public class Main {
         user1.getBasket().addProduct(product3);
         user2.getBasket().addProduct(product2);
         user2.getBasket().addProduct(product4);
-
-        System.out.println();
 
     }
 }
