@@ -10,5 +10,5 @@ public class line {
                 System.out.println(a[i].toString());
             }
         }
-    }
+    }     
 }
