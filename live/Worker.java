@@ -17,6 +17,10 @@ public class Worker {
         this.age = age;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String toString() {
         return String.format(" %s %s %s %s %d %d", fullName, position, email, phone, payday, age);
