@@ -5,7 +5,7 @@ public class Main {
         Hero hero1 = new Hero("Konan");
         // hero1.getInfoOfHero();
         System.out.println("----------------------------");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             hero1.luckCheck();
         }
     }

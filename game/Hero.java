@@ -1,5 +1,7 @@
 package game;
 
+import java.util.concurrent.TimeUnit;
+
 import live.lib;
 
 public class Hero {
@@ -54,18 +56,67 @@ public class Hero {
     }
 
     public void luckCheck() {
-        int i = 0;
+        int win = 0;
+        int lose = 0;
         int badluck = lib.rnd(1, 6) + lib.rnd(1, 6);
         if (luckiness >= badluck) {
-            System.out.println("В этот раз тебе повезло " + name + ". Но вледующий раз удача отвернётся от тебя... ");
-            System.out.println("Помини моё слово, герой...");
-            i++;
+            switch (win) {
+                case 1:
+                    System.out.println(luckiness);
+                    System.out
+                            .println("В этот раз тебе повезло " + name
+                                    + ". Но вледующий раз удача отвернётся от тебя... ");
+                    System.out.println("Помини моё слово, герой...");
+                    break;
+                case 2:
+                    System.out.println(luckiness);
+                    System.out.println("А ты везучий");
+                    break;
+                case 3:
+                    System.out.println(luckiness);
+                    System.out.println("Что ?! Опять ?! Не может быть !");
+                    break;
+                case 4:
+                    System.out.println(luckiness);
+                    System.out.println("Ты жульничаешь !");
+                    break;
+                case 5:
+                    System.out.println(luckiness);
+                    System.out.println("Тебя Тимора в зад поцеловала чтоли ?!");
+                    break;
+
+                default:
+                    break;
+            }
+            win++;
         } else {
-            System.out.println("У теябя выпало - " + badluck);
-            System.out.println("Я же говорил... Ехехехе...");
-        }
-        if (i == 4) {
-            System.out.println(i);
+
+            switch (lose) {
+                case 1:
+                    System.out.println("У теябя выпало - " + badluck);
+                    System.out.println("Я же говорил... Ехехехе...");
+                    break;
+                case 2:
+                    System.out.println(luckiness);
+                    System.out.println("Сегодня просто не твой день. Ехехехе...");
+                    break;
+                case 3:
+                    System.out.println(luckiness);
+                    System.out.println(" Оооо ! Приятель ! Да тебе крупно не везёт ! Ехехехе...");
+                    break;
+                case 4:
+                    System.out.println(luckiness);
+                    System.out.println("Ахахахахах ! Да ! Вот это я называю отличным деньком !");
+                    break;
+                case 5:
+                    System.out.println(luckiness);
+                    System.out.println("Ой, ой, ой. Посмотри те на него ! Он сейчас расплачется ! Ахахахахах !");
+                    break;
+
+                default:
+                    break;
+            }
+            lose++;
         }
     }
 }
