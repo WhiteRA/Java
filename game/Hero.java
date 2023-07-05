@@ -47,4 +47,25 @@ public class Hero {
     public void setSkill(int skill) {
         this.skill = skill;
     }
+
+    public void getInfoOfHero() {
+        System.out.println("Имя: " + name + "\n" + "Мастерство: " + skill + "\n" + "Выносливость: " + endurance + "\n"
+                + "Удачливость: " + luckiness);
+    }
+
+    public void luckCheck() {
+        int i = 0;
+        int badluck = lib.rnd(1, 6) + lib.rnd(1, 6);
+        if (luckiness >= badluck) {
+            System.out.println("В этот раз тебе повезло " + name + ". Но вледующий раз удача отвернётся от тебя... ");
+            System.out.println("Помини моё слово, герой...");
+            i++;
+        } else {
+            System.out.println("У теябя выпало - " + badluck);
+            System.out.println("Я же говорил... Ехехехе...");
+        }
+        if (i == 4) {
+            System.out.println(i);
+        }
+    }
 }
