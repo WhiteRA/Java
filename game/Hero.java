@@ -60,8 +60,7 @@ public class Hero {
         if (luckiness >= badluck) {
             switch (win) {
                 case 1:
-                    this.win++;
-                    System.out.println(luckiness);
+                    win++;
                     System.out
                             .println("В этот раз тебе повезло " + name
                                     + ". Но вледующий раз удача отвернётся от тебя... ");
@@ -69,61 +68,49 @@ public class Hero {
                     break;
                 case 2:
                     win++;
-                    System.out.println(luckiness);
                     System.out.println("А ты везучий");
                     break;
                 case 3:
                     win++;
-                    System.out.println(luckiness);
                     System.out.println("Что ?! Опять ?! Не может быть !");
                     break;
                 case 4:
                     win++;
-                    System.out.println(luckiness);
                     System.out.println("Ты жульничаешь !");
                     break;
                 case 5:
                     win++;
-                    System.out.println(luckiness);
                     System.out.println("Тебя Тимора в зад поцеловала чтоли ?!");
                     break;
-
                 default:
-                    System.out.println("Интересно...");
+                    System.out.println("Хм...");
                     win++;
                     break;
             }
-
         } else {
             switch (lose) {
                 case 1:
                     lose++;
-                    System.out.println("У теябя выпало - " + badluck);
-                    System.out.println("Я же говорил... Ехехехе...");
+                    System.out.println("Удача на моей стороне... Ехехехе...");
                     break;
                 case 2:
                     lose++;
-                    System.out.println(luckiness);
                     System.out.println("Сегодня просто не твой день. Ехехехе...");
                     break;
                 case 3:
                     lose++;
-                    System.out.println(luckiness);
                     System.out.println(" Оооо ! Приятель ! Да тебе крупно не везёт ! Ехехехе...");
                     break;
                 case 4:
                     lose++;
-                    System.out.println(luckiness);
                     System.out.println("Ахахахахах ! Да ! Вот это я называю отличным деньком !");
                     break;
                 case 5:
                     lose++;
-                    System.out.println(luckiness);
-                    System.out.println("Ой, ой, ой. Посмотри те на него ! Он сейчас расплачется ! Ахахахахах !");
+                    System.out.println("Ой, ой, ой! Посмотри те на него ! Он сейчас расплачется ! Ахахахахах !");
                     break;
-
                 default:
-                    System.out.println("Хм...");
+                    System.out.println("Интересно...");
                     lose++;
                     break;
             }
