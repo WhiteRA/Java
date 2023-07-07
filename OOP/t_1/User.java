@@ -1,4 +1,4 @@
-package OOP;
+package OOP.t_1;
 
 public class User {
     private String login;

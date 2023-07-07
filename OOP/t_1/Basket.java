@@ -1,4 +1,4 @@
-package OOP;
+package OOP.t_1;
 
 import java.util.ArrayList;
 import java.util.List;
