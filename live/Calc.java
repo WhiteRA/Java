@@ -9,12 +9,6 @@ public class Calc<N extends Number> {
         this.num2 = num2;
     }
 
-    public double aver() {
-        double sum = 0;
-        sum += num1.doubleValue();
-        return sum;
-    }
-
     public void slojenie() {
         if (num1 instanceof Integer && num2 instanceof Integer) {
             int sum = 0;
