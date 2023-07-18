@@ -1,12 +1,9 @@
 package live;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class line {
     public static void main(String[] args) {
-        List a = new ArrayList();
+        Calc<Double> a1 = new Calc<>(2.3, 5.1);
+        a1.slojenie();
     }
 
-    
 }

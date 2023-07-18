@@ -15,9 +15,9 @@ public class Main {
         double result4 = calculator4.divide(8.0, 2.0); // Результат: 4.0
 
         Calculator<String> calculator5 = new Calculator<>();
-        String resul5t = calculator5.binaryConversion("42"); // Результат: "101010"
+        String result5 = calculator5.binaryConversion("42"); // Результат: "101010"
 
         Calculator<Integer> calculator6 = new Calculator<>();
-        String result26 = calculator6.binaryConversion(16); // Результат: "10000"
+        String result6 = calculator6.binaryConversion(16); // Результат: "10000"
     }
 }
