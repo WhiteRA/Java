@@ -11,9 +11,9 @@ public class Hero {
     private int endurance; // Уровень ВЫНОСЛИ-ВОСТИ отражает состояние твоего здоровья, твою волю к победе,
                            // способность отражать удары и переносить ране-ния; чем выше уровень
                            // ВЫНОСЛИВОСТИ, тем дольше ты можешь сопротивляться ударам врагов.
-    private int luckiness; // Уровень УДАЧЛИВОСТИ показывает, насколько ты везуч.
+    private static int luckiness; // Уровень УДАЧЛИВОСТИ показывает, насколько ты везуч.
     private int win = 0; // для игр на удачу
-    private int lose = 0; // для игр на удачу
+    private int loss = 0; // для игр на удачу
 
     public Hero(String name) {
         this.name = name;
@@ -58,6 +58,8 @@ public class Hero {
     public void luckCheck() {
         int badluck = lib.rnd(1, 6) + lib.rnd(1, 6);
         if (luckiness >= badluck) {
+            System.out.println();
+            System.out.println("Бросок шуллера " + badluck + " Ваш бросок " + luckiness);
             switch (win) {
                 case 1:
                     win++;
@@ -88,30 +90,32 @@ public class Hero {
                     break;
             }
         } else {
-            switch (lose) {
+            System.out.println();
+            System.out.println("Бросок шуллера " + badluck + " Ваш бросок " + luckiness);
+            switch (loss) {
                 case 1:
-                    lose++;
+                    loss++;
                     System.out.println("Удача на моей стороне... Ехехехе...");
                     break;
                 case 2:
-                    lose++;
+                    loss++;
                     System.out.println("Сегодня просто не твой день. Ехехехе...");
                     break;
                 case 3:
-                    lose++;
+                    loss++;
                     System.out.println(" Оооо ! Приятель ! Да тебе крупно не везёт ! Ехехехе...");
                     break;
                 case 4:
-                    lose++;
+                    loss++;
                     System.out.println("Ахахахахах ! Да ! Вот это я называю отличным деньком !");
                     break;
                 case 5:
-                    lose++;
+                    loss++;
                     System.out.println("Ой, ой, ой! Посмотри те на него ! Он сейчас расплачется ! Ахахахахах !");
                     break;
                 default:
                     System.out.println("Интересно...");
-                    lose++;
+                    loss++;
                     break;
             }
         }
