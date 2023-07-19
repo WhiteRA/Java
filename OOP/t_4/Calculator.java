@@ -32,27 +32,29 @@ public class Calculator<T extends Number> {
             return (T) (Double) result;
         }
     }
-
-    public String binaryConversion(T num) {
-        int value;
-
-        // Если num - строка, парсим ее в int
-        if (num instanceof String) {
-            try {
-                value = Integer.parseInt((String) num);
-            } catch (NumberFormatException e) {
-                throw new IllegalArgumentException("Неверный формат числа");
-            }
-        }
-        // Если num - число типа int, преобразуем его
-        else if (num instanceof Integer) {
-            value = (Integer) num;
-        } else {
-            throw new IllegalArgumentException("Неверный тип числа");
-        }
-
-        // Переводим число в бинарное представление
-        String binary = Integer.toBinaryString(value);
-        return binary;
-    }
 }
+/*
+ * public String binaryConversion(T num) {
+ * int value;
+ * 
+ * // Если num - строка, парсим ее в int
+ * if (num instanceof String) {
+ * try {
+ * value = Integer.parseInt((String) num);
+ * } catch (NumberFormatException e) {
+ * throw new IllegalArgumentException("Неверный формат числа");
+ * }
+ * }
+ * // Если num - число типа int, преобразуем его
+ * else if (num instanceof Integer) {
+ * value = (Integer) num;
+ * } else {
+ * throw new IllegalArgumentException("Неверный тип числа");
+ * }
+ * 
+ * // Переводим число в бинарное представление
+ * String binary = Integer.toBinaryString(value);
+ * return binary;
+ * }
+ * }
+ */
