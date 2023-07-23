@@ -1,4 +1,4 @@
-package OOP.t_5;
+package OOP.t_5.calculator;
 
 class CalculatorModel {
     private double real;
