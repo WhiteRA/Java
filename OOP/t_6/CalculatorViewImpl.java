@@ -26,7 +26,6 @@ class CalculatorViewImpl<T> implements CalculatorView<T> {
     public T getInput(String message) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(message);
-        // Assuming we only support rational numbers for simplicity
         int numerator = scanner.nextInt();
         System.out.print("/");
         int denominator = scanner.nextInt();
