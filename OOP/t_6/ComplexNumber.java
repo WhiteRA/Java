@@ -1,5 +1,8 @@
 package OOP.t_6;
 
+// SOLID: Принцип открытости/закрытости - Класс открыт для расширения через реализацию интерфейса Number,
+// но закрыт для изменения, так как не требует изменений при добавлении новых арифметических операций.
+
 class ComplexNumber implements Number<ComplexNumber> {
     private double real;
     private double imaginary;

@@ -1,7 +1,13 @@
 package OOP.t_6;
 
-interface CalculatorView<T> {
-    void showResult(T result);
+// Принцип SOLID: Принцип единственной ответственности (Single Responsibility Principle)
+// CalculatorView - интерфейс представления, отвечающий только за отображение пользовательского интерфейса.
+// CalculatorPresenter - интерфейс презентера, отвечающий за обработку пользовательского ввода и управление моделью и представлением.
 
-    void showError(String message);
+interface CalculatorView<T> {
+    void showResult(T result);// SOLID: Принцип единственной ответственности - данный метод отвечает за
+                              // отображение результата
+
+    void showError(String message);// SOLID: Принцип единственной ответственности - данный метод отвечает за
+                                   // отображение ошибок
 }

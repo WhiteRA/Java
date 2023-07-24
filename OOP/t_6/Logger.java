@@ -1,7 +1,11 @@
 package OOP.t_6;
 
+// Принцип SOLID: Принцип разделения интерфейсов (Interface Segregation Principle)
+// Logger содержит только методы для логирования информации и ошибок, что делает его интерфейс более специфичным и сегрегированным.
 interface Logger {
-    void logInfo(String message);
+    void logInfo(String message);// SOLID: Принцип единственной ответственности - данный метод отвечает за
+                                 // логирование информационных сообщений
 
-    void logError(String message);
+    void logError(String message);// SOLID: Принцип единственной ответственности - данный метод отвечает за
+                                  // логирование сообщений об ошибках
 }

@@ -1,5 +1,9 @@
 package OOP.t_6;
 
+// Принцип SOLID: Принцип открытости/закрытости (Open/Closed Principle)
+// CalculatorPresenterImpl реализует интерфейс CalculatorPresenter и не изменяется при добавлении новых операций,
+// а только расширяется путем добавления новых методов для обработки новых операций.
+
 class CalculatorPresenterImpl<T extends Number<T>> implements CalculatorPresenter<T> {
     private CalculatorView<T> view;
 
