@@ -1,4 +1,3 @@
-package live;
 
 public class lib {
 
