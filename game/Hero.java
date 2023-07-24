@@ -1,6 +1,6 @@
 package game;
 
-import live.lib;
+import lib;
 
 public class Hero {
     // Статы не должны быть больше стартовых значений, за исключением тех редких
