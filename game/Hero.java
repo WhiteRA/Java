@@ -1,6 +1,6 @@
 package game;
 
-import training.*;
+import lib;
 
 public class Hero {
     // Статы не должны быть больше стартовых значений, за исключением тех редких
