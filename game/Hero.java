@@ -1,6 +1,6 @@
 package game;
 
-import lib;
+import lib.tools;
 
 public class Hero {
     // Статы не должны быть больше стартовых значений, за исключением тех редких
@@ -17,9 +17,9 @@ public class Hero {
 
     public Hero(String name) {
         this.name = name;
-        this.skill = lib.rnd(1, 6) + 6;
-        this.endurance = lib.rnd(1, 6) + lib.rnd(1, 6) + 12;
-        this.luckiness = lib.rnd(1, 6);
+        this.skill = tools.rnd(1, 6) + 6;
+        this.endurance = tools.rnd(1, 6) + tools.rnd(1, 6) + 12;
+        this.luckiness = tools.rnd(1, 6);
     }
 
     public int getEndurance() {
@@ -56,7 +56,7 @@ public class Hero {
     }
 
     public void luckCheck() {
-        int badluck = lib.rnd(1, 6) + lib.rnd(1, 6);
+        int badluck = tools.rnd(1, 6) + tools.rnd(1, 6);
         if (luckiness >= badluck) {
             System.out.println();
             System.out.println("Бросок шуллера " + badluck + " Ваш бросок " + luckiness);
