@@ -10,7 +10,7 @@ public class Main {
                 hero1.luckCheck();
             }
         } catch (Error e) {
-            System.out.println("Библиотека lib.java ненайдена");
+            System.out.println(" Что-то пошло не так ");
         }
 
     }
